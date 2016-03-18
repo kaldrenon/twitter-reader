@@ -1,10 +1,10 @@
 var Twitter = require('twitter');
 
 var client = new Twitter({
-  consumer_key: 'asq5gMUn0Ufzu0rXtL2Fm2lzZ',
-  consumer_secret: 'EPt57hPmSTjQVKfwVCzBhCTkvh8Kn29OvDZn5kLXVnDMrumGTk',
-  access_token_key: '631663116-VYUeeeTLS9NPudwlZPqEUYBY5UI9JUTnU2B29IfI',
-  access_token_secret: 'r7F2rhpoOPEhqOsSPCUW5KlFpTARuriJxd1koz4G8qrcf'
+  consumer_key: 'KEY_HERE',
+  consumer_secret: 'KEY_HERE',
+  access_token_key: 'KEY_HERE',
+  access_token_secret: 'KEY_HERE'
 });
 
 var topics = [
@@ -17,7 +17,6 @@ var topics = [
 
 function searchAll(topic_list) {
   topic_list.forEach(function(topic) {
-    console.log('### ' + topic);
     search(topic);
   });
 }
@@ -34,9 +33,13 @@ function search(query) {
     }
 
     if (tweets.length > 0) {
+      console.log("\n###");
+      console.log("### " + params.q);
+      console.log("###");
       tweets.forEach(function(tweet) {
         console.log("  " + tweet.user.name + " (" + tweet.user.screen_name + ")");
-        console.log("\t" + tweet.text);
+        console.log("    " + tweet.text.replace("\n", "\n    "));
+        console.log();
       });
     } else {
       console.log("No results for " + params.q);
