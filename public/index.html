@@ -12,21 +12,23 @@
   <body>
     <div id="content"></div>
     <script type="text/babel">
+
       var data = [
         { author: 'Steve', message: 'One' },
         { author: 'Barry', message: 'Two' },
         { author: 'Wil', message: 'Three' },
         { author: 'Tom', message: 'Four' },
         { author: 'Jack', message: 'Five' }
-      ]
+      ];
+
       // Components
       var Tweet = React.createClass({
         render: function() {
           return (
-            <div class='Tweet'>
-              <b>{ this.props.author }</b>
-              <span>{ this.props.message }</span>
-            </div>
+          <div class="Tweet">
+            <b>{ this.props.author }</b>
+            <span>{ this.props.message }</span>
+          </div>
           );
         }
       });
@@ -36,8 +38,9 @@
           var tweets = this.props.data.map(function(tweet) {
             return ( <Tweet author={tweet.author} message={tweet.message} /> );
           });
+          console.log(tweets);
           return (
-            <div className='TweetList'>
+            <div className="TweetList">
               {tweets}
             </div>
           );
@@ -46,9 +49,10 @@
 
       // What's actually showing up on the page
       ReactDOM.render(
-        <TweetList url="/api/tweets" />,
+        <TweetList data={ data } />,
         document.getElementById('content')
       );
+
     </script>
   </body>
 </html>
