@@ -41,12 +41,17 @@ app.use(function(req, res, next) {
 });
 
 app.get('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    res.json(JSON.parse(data));
+  console.log('/api/comments');
+  twitterClient.get('search/tweets', params, function(error, results, response) {
+    var tweets = results.statuses;
+    tweets = tweets.map(function(tweet) {
+      return {
+        author: "  " + tweet.user.name + " (" + tweet.user.screen_name + ")",
+        message: tweet.text,
+        key: tweet.id
+      }
+    });
+    res.json(tweets);
   });
 });
 
@@ -111,6 +116,7 @@ function search(query) {
       console.log("### " + params.q);
       console.log("###");
       tweets.forEach(function(tweet) {
+        console.log(tweet);
         console.log("  " + tweet.user.name + " (" + tweet.user.screen_name + ")");
         console.log("    " + tweet.text.replace("\n", "\n    "));
         console.log();
@@ -121,4 +127,3 @@ function search(query) {
   });
 }
 
-searchAll(topics);
