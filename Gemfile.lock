@@ -119,7 +119,6 @@ GEM
       dry-schema (~> 1.4, >= 1.4.3)
     equalizer (0.0.11)
     erubi (1.9.0)
-    erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.12.2)
     ffi-compiler (1.0.1)
@@ -127,20 +126,6 @@ GEM
       rake
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    haml (5.0.1)
-      temple (>= 0.8.0)
-      tilt
-    haml-rails (1.0.0)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
-      haml (>= 4.0.6, < 6.0)
-      html2haml (>= 1.0.1)
-      railties (>= 4.0.1)
-    html2haml (2.2.0)
-      erubis (~> 2.7.0)
-      haml (>= 4.0, < 6)
-      nokogiri (>= 1.6.0)
-      ruby_parser (~> 3.5)
     http (4.3.0)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -216,8 +201,6 @@ GEM
       ffi (~> 1.0)
     regexp_parser (1.6.0)
     ruby_dep (1.5.0)
-    ruby_parser (3.9.0)
-      sexp_processor (~> 4.1)
     rubyzip (2.2.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -233,8 +216,14 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sexp_processor (4.9.0)
     simple_oauth (0.3.1)
+    slim (4.0.1)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.2.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -293,13 +282,14 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   config
-  haml-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  slim
+  slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

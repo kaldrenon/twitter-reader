@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.tweet {
+  padding: 12px;
+  max-width: 400px;
+  border-bottom: 1px solid #ccc;
+}
+
+.tweet .user {
+  font-weight: bold;
+  display: block;
+}
+
+.tweet .message {
+  margin-top: 5px;
+  display: block;
+}
