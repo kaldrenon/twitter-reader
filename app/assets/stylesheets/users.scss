@@ -1,3 +1,79 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-container {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+form {
+  .field {
+    label {
+      display: inline-block;
+      padding: 5px;
+    }
+
+    input, textarea {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      min-width: 250px;
+      margin-left: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+  }
+
+  input[type=submit] {
+    padding: 10px 20px;
+    border-image: none;
+    background: #abd;
+  }
+}
+
+.users-table {
+  th, td {
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+    border: 0;
+  }
+
+  th {
+    border-bottom: 1px solid #222;
+  }
+
+  td {
+    border-bottom: 1px solid #ccc;
+    vertical-align: top;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .username {
+    width: 140px;
+  }
+
+  .user-id {
+    width: 100px;
+  }
+
+  .user-nick {
+    width: 200px;
+    text-overflow: wrap;
+  }
+
+  .user-notes {
+    width: 400px;
+    text-overflow: wrap;
+  }
+}

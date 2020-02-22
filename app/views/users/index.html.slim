@@ -1,26 +1,26 @@
 h1 Listing users
 
-table
+table[class='users-table']
   thead
     tr
-      th Name
-      th Twitter user
-      th Nickname
-      th Notes
-      th
-      th
-      th
+      th[class = "username"]   Handle
+      th[class = "user-id"]    User ID
+      th[class = "user-nick"]  Nickname
+      th[class = "user-notes"] Notes
+      th[class = "show"]
+      th[class = "edit"]
+      th[class = "destroy"]
 
-  tbody
+        tbody
     - @users.each do |user|
       tr
-        td= user.name
-        td= user.twitter_user_id
-        td= user.nickname
-        td= user.notes
-        td= link_to 'Show', user
-        td= link_to 'Edit', edit_user_path(user)
-        td= link_to 'Destroy', user, method: :delete, data:   confirm: 'Are you sure?'  
+        td[class = "username"]   = user.name
+        td[class = "user-id"]    = user.twitter_user_id
+        td[class = "user-nick"]  = user.nickname
+        td[class = "user-notes"] = user.notes
+        td[class = "show"]       = link_to 'Show', user
+        td[class = "edit"]       = link_to 'Edit', edit_user_path(user)
+        td[class = "destroy"]    = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 
 br
 

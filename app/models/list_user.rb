@@ -1,13 +1,14 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: list_users
 #
 #  id         :integer          not null, primary key
-#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  list_id    :integer
+#  user_id    :integer
 #
-class List < ApplicationRecord
-  has_many :list_users
-  has_many :users, through: :list_users
+class ListUser < ApplicationRecord
+  belongs_to :list
+  belongs_to :user
 end

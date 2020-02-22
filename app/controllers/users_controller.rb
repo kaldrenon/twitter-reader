@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include TwitterHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -58,6 +59,17 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def search_user_id
+    @username = params[:username]
+
+    @user = twitter_client.user(@username)
+
+    respond_to do |format|
+      format.html { ap @user }
+      format.js { render "search", layout: false }
     end
   end
 

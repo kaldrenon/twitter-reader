@@ -7,7 +7,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class List < ApplicationRecord
-  has_many :list_users
-  has_many :users, through: :list_users
+require 'rails_helper'
+
+RSpec.describe List, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

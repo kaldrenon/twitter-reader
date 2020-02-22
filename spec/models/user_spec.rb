@@ -10,7 +10,8 @@
 #  updated_at      :datetime         not null
 #  twitter_user_id :integer
 #
-class User < ApplicationRecord
-  has_many :list_users
-  has_many :lists, through: :list_users
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

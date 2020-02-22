@@ -1,7 +1,11 @@
-h1 Editing user
+h1= "Editing #{@user.name}"
+
+= link_to 'Show', @user
+br
+= link_to 'Back', users_path
 
 = render 'form'
 
 = link_to 'Show', @user
-| \|
+br
 = link_to 'Back', users_path

@@ -1,0 +1,7 @@
+= form_with(url: '/users/search', class: 'user-search') do |f|
+  .field
+    = f.label :username
+    = f.text_field :username
+  .actions
+    = f.submit 'Search'
+.search-result

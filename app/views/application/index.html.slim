@@ -1,2 +1,5 @@
 - @tweets.each do |tweet|
   = render_tweet(tweet)
+  details[class='debug']
+    summary Tweet JSON
+    =ap(tweet).html_safe

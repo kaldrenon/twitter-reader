@@ -1,9 +1,10 @@
-h1 Listing lists
+h1 User Lists
 
 table
   thead
     tr
       th Name
+      th Count
       th
       th
       th
@@ -12,9 +13,10 @@ table
     - @lists.each do |list|
       tr
         td= list.name
+        td= list.users.count
         td= link_to 'Show', list
         td= link_to 'Edit', edit_list_path(list)
-        td= link_to 'Destroy', list, method: :delete, data:   confirm: 'Are you sure?'  
+        td= link_to('Destroy', list, method: :delete, data: {confirm: 'Are you sure?'})
 
 br
 
