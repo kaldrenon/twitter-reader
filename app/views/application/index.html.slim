@@ -1,5 +1,15 @@
-- @tweets.each do |tweet|
-  = render_tweet(tweet)
-  details[class='debug']
-    summary Tweet JSON
-    =ap(tweet).html_safe
+.two-columns
+  .timeline.column
+    h2 Latest Tweets (Timeline)
+    - @tweets.each do |tweet|
+      = render_tweet(tweet)
+      details[class='debug']
+        summary Tweet JSON
+        =ap(tweet).html_safe
+  .utils.column
+    h2 Lists
+    ul
+      - @lists.each do |list|
+        li
+          = link_to(list.name, list_path(list))
+          = " - #{list.users.count} member(s)"

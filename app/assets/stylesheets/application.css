@@ -10,37 +10,59 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ * Colors:
+ * #040404
+ * #13505B
+ * #26867C
+ * #BFD7B5
+ * #D7D9CE
+ *
  *= require_tree .
  *= require_self
  */
 
 body {
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #D7D9CE;
+  color: #040404;
 }
 
 a {
+  display: inline-block;
+  padding: 5px;
   text-decoration: none;
+  color: #26867C;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #BFD7B5;
+  background: #13505B;
 }
 
 .nav {
   width: 100%;
-  background: #3dc;
+  background: #13505B;
   padding: 15px;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-family: 'Bitter';
 }
 
 .nav a {
   padding-left: 10px;
+  color: #D7D9CE;
+}
+
+.nav a:hover {
+  color: #040404;
 }
 
 .tweet {
   padding: 12px;
-  max-width: 400px;
-  border-bottom: 1px solid #ccc;
+  max-width: 450px;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  border-bottom: 1px solid #aaa;
 }
 
 .tweet .user {
@@ -54,6 +76,23 @@ a:hover {
 }
 
 details summary {
-  color: #ccc;
+  color: #a88;
   padding: 5px;
 }
+
+.two-columns {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.two-columns .column {
+  flex: 50%;
+}
+
+.utils ul li {
+  list-style: none;
+  padding: 5px;
+}
+

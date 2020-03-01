@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  include TwitterHelper
 
   # GET /lists
   # GET /lists.json
@@ -10,6 +11,10 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    list = List.find(params[:id])
+    search_string = "(from:#{list.twitter_usernames.join("OR, from:")})"
+
+    @tweets = twitter_client.search(search_string)
   end
 
   # GET /lists/new
